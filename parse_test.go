@@ -20,15 +20,15 @@ func (p *ParseTestSuite) TestErrorCases(c *check.C) {
 		},
 		{
 			s: "A---",
-			exp: "error parsing Version number: .*",
+			exp: "error parsing Specification Version number: .*",
 		},
 		{
 			s: "1XYY",
-			exp: "unexpected value for Explicit notice field",
+			exp: "unexpected value for Explicit Notice field",
 		},
 		{
 			s: "1YXY",
-			exp: "unexpected value for opt out field",
+			exp: "unexpected value for Opt-Out Sale field",
 		},
 		{
 			s: "1YYX",
