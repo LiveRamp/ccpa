@@ -6,32 +6,31 @@ import (
 	"github.com/LiveRamp/ccpa"
 )
 
-
 type ParseTestSuite struct{}
 
 func (p *ParseTestSuite) TestErrorCases(c *check.C) {
-	var tcs = []struct{
-		s string
+	var tcs = []struct {
+		s   string
 		exp string
 	}{
 		{
-			s: "1YY",
+			s:   "1YY",
 			exp: "consent string should be exactly 4 characters in length",
 		},
 		{
-			s: "A---",
+			s:   "A---",
 			exp: "error parsing Specification Version number: .*",
 		},
 		{
-			s: "1XYY",
+			s:   "1XYY",
 			exp: "unexpected value for Explicit Notice field",
 		},
 		{
-			s: "1YXY",
+			s:   "1YXY",
 			exp: "unexpected value for Opt-Out Sale field",
 		},
 		{
-			s: "1YYX",
+			s:   "1YYX",
 			exp: "unexpected value for LSPA field",
 		},
 	}
@@ -46,8 +45,8 @@ func (p *ParseTestSuite) TestErrorCases(c *check.C) {
 }
 
 func (p *ParseTestSuite) TestParse(c *check.C) {
-	var tcs = []struct{
-		s string
+	var tcs = []struct {
+		s   string
 		exp *ccpa.Consent
 	}{
 		// First 3 are the example strings from the IAB spec.
@@ -88,7 +87,6 @@ func (p *ParseTestSuite) TestParse(c *check.C) {
 				LSPA:     ccpa.NotApplicable,
 			},
 		},
-
 	}
 
 	for _, tc := range tcs {
