@@ -1,0 +1,13 @@
+# BEGIN TERRAFORM MANAGED BLOCK
+"apiVersion": "backstage.io/v1alpha1"
+"kind": "Location"
+"metadata":
+  "annotations":
+    "github.com/project-slug": "LiveRamp/ccpa"
+    "github.com/team-slug": "LiveRamp/ps"
+  "description": "Go Implementation of the IAB U.S. Privacy String (CCPA Opt-Out Storage
+    Format) "
+  "name": "ccpa"
+  "tags": []
+"spec": {}
+# END TERRAFORM MANAGED BLOCK
